@@ -1,0 +1,27 @@
+body {
+	background: linear-gradient(-45deg, #ffffff, #ffc5e6, #ff257e, #ff2644, #d60000);
+	background-size: 400% 400%;
+	animation: gradient 5s linear infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.card {
+	/* From https://css.glass */
+background: rgba(255, 255, 255, 0.25);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(15px);
+-webkit-backdrop-filter: blur(15px);
+}
