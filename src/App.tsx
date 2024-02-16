@@ -11,7 +11,9 @@ function card(title: string, video: string, desc: string, extra: React.ReactNode
         <Card.Text>{desc}</Card.Text>
       </Card.Body>
       <Suspense fallback={<Spinner />}>
-        <video width='100%' height='100%' src={video} autoPlay controls />
+        <video width='100%' height='100%' loop autoPlay controls playsInline>
+          <source src={video} />
+        </video>
       </Suspense>
       {extra}
     </Card>
@@ -52,7 +54,7 @@ function getBody(path: string) {
 function App() {
   const urlParams = new URLSearchParams(window.location.search)
   const body = getBody(urlParams.get('page') || '')
-  return <Container className='d-flex flex-column min-vh-100 justify-content-center align-items-center'>{body}</Container>
+  return <Container className='d-flex flex-column max-vh-100 min-vh-100 justify-content-center align-items-center'>{body}</Container>
 }
 
 export default App
